@@ -1,6 +1,10 @@
 cloudprovider: vsphere
 cloudCredentialSecretName: cc-z5wvg
 kubernetesVersion: v1.27.16+rke2r2
+monitoring:
+  enabled: false
+cluster:
+  name: mycluster
 # Specify nodepool options. Can add multiple node groups, specify etcd, controlplane and worker roles.
 nodepool:
 - etcd: true

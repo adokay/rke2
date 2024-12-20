@@ -8,15 +8,17 @@ spec:
   kubernetesVersion: {{ .Values.kubernetesVersion }}
   rkeConfig:
     machinePools:
-    - controlPlaneRole: true
-      etcdRole: true
-      workerRole: true
-      quantity: {{ $nodepool.count }}
-      name: {{ .Values.cluster.name }}-nodes
+    {{- range .Values.nodepool }}
+    - controlPlaneRole: {{ .controlplane | default false }}
+      etcdRole: {{ .etcd | default false }}
+      workerRole: {{ .worker | default false }}
+      quantity: {{ .quantity | default 1 }}
+      name: {{ .name }}-nodes
       machineConfigRef:
         kind: VmwarevsphereConfig
-        name: {{ .Values.cluster.name }}-nodes
-      paused: false
-      displayName: {{ .Values.cluster.name }}-nodes
+        name: {{ .name }}-nodes
+      paused: {{ .paused | default false }}
+      displayName: {{ .name }}-nodes
+    {{- end }}
     machineGlobalConfig:
       cni: cilium
