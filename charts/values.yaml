@@ -17,7 +17,7 @@ nodepool:
   datastore: "rancherdc/datastore/rancherDatastore01"
   datastoreCluster: ""
   diskSize: "20480"       # Wrapped in quotes
-  folder: "rancherdc/vm/adarshr-vm-folder"
+  folder: "/rancherdc/vm/adarshr-vm-folder"
   memorySize: "4096"      # Wrapped in quotes
   network: 
     - "/rancherdc/network/VM Network"
