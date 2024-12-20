@@ -4,33 +4,23 @@ kind: VmwarevsphereConfig
 metadata:
   name: {{ .name }}-nodes
   namespace: fleet-default
-cloneFrom: {{ .cloneFrom }}
-#cloudConfig: {{ .cloudConfig }}
-#cloudinit: {{ .cloudinit }}
-#contentLibrary: {{ .contentLibrary }}
-cpuCount: {{ .cpuCount }}
-#creationType: {{ .creationType }}
-#customAttribute: {{ .customAttribute }}
-datacenter: {{ .datacenter }}
-datastore: {{ .datastore }}
-datastoreCluster: {{ .datastoreCluster }}
-diskSize: {{ .diskSize }}
-folder: {{ .folder }}
-#hostsystem: {{ .hostsystem }}
-memorySize: {{ .memorySize }}
-network: 
+  annotations:
+    helm.sh/hook: pre-install
+    helm.sh/hook-weight: "-1"
+cloneFrom: {{ .cloneFrom | quote }}
+cpuCount: {{ .cpuCount | quote }}
+datacenter: {{ .datacenter | quote }}
+datastore: {{ .datastore | quote }}
+diskSize: {{ .diskSize | quote }}
+folder: {{ .folder | quote }}
+memorySize: {{ .memorySize | quote }}
+network:
   {{- range .network }}
-  - {{ . }}
+  - {{ . | quote }}
   {{- end }}
-pool: {{ .pool }}
-sshPort: {{ .sshPort }}
-sshUser: {{ .sshUser }}
-sshUserGroup: {{ .sshUserGroup }}
-#tag: {{ .tag }}
-#vappIpallocationpolicy: {{ .vappIpallocationpolicy }}
-#vappIpprotocol: {{ .vappIpprotocol }}
-#vappProperty: {{ .vappProperty }}
-#vappTransport: {{ .vappTransport }}
-vcenter: {{ .vcenter }}
-vcenterPort: {{ .vcenterPort }}
+pool: {{ .pool | quote }}
+sshPort: {{ .sshPort | quote }}
+sshUserGroup: {{ .sshUserGroup | quote }}
+vcenterPort: {{ .vcenterPort | quote }}
 {{- end }}
+
