@@ -1,0 +1,30 @@
+cloudprovider: vsphere
+cloudCredentialSecretName: cc-z5wvg
+kubernetesVersion: v1.27.16+rke2r2
+# Specify nodepool options. Can add multiple node groups, specify etcd, controlplane and worker roles.
+nodepool:
+- etcd: true
+  controlplane: true
+  worker: true
+  #quantity: 1
+  # Pause node pool
+  paused: false
+  # specify displayName
+  # displayName: ""
+  name: vsphere-nodepool-1-adarsh
+  cloneFrom: "/rancherdc/vm/templates-folder/ubuntu-22.04-cloudimg"
+  cpuCount: "4"
+  creationType: "vm"
+  datacenter: "rancherdc"
+  datastore: "rancherdc/datastore/rancherDatastore01"
+  datastoreCluster: ""
+  diskSize: "20480"
+  folder: "rancherdc/vm/adarshr-vm-folder"
+  # hostsystem: ""
+  memorySize: "4096"
+  network: 
+    - /rancherdc/network/VM Network
+  pool: "/rancherdc/host/rancheresxi01.sup.scz.suse.com/Resources"
+  sshPort: "22"
+  sshUserGroup: staff
+  vcenterPort: 443

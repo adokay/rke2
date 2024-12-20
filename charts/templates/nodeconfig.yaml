@@ -1,0 +1,31 @@
+apiVersion: rke-machine-config.cattle.io/v1
+kind: VmwarevsphereConfig
+metadata:
+  name: {{ .Values.nodepool.name }}-nodes
+  namespace: fleet-default
+cloneFrom: {{ .Values.nodepool.cloneFrom }}
+#cloudConfig: {{ $nodepool.cloudConfig }}
+#cloudinit: {{ $nodepool.cloudinit }}
+#contentLibrary: {{ $nodepool.contentLibrary }}
+cpuCount: {{ .Values.nodepool.cpuCount }}
+#creationType: {{ $nodepool.creationType }}
+#customAttribute: {{ $nodepool.customAttribute }}
+datacenter: {{ .Values.nodepool.datacenter }}
+datastore: {{ .Values.nodepool.datastore }}
+datastoreCluster: {{ .Values.nodepool.datastoreCluster }}
+diskSize: {{ .Values.nodepool.diskSize }}
+folder: {{ .Values.nodepool.folder }}
+#hostsystem: {{ $nodepool.hostsystem }}
+memorySize: {{ .Values.nodepool.memorySize }}
+network: {{ $nodepool.network }}
+pool: {{ .Values.nodepool.pool }}
+sshPort: {{ .Values.nodepool.sshPort }}
+sshUser: {{ .Values.nodepool.sshUser }}
+sshUserGroup: {{ .Values.nodepool.sshUserGroup }}
+#tag: {{ $nodepool.tag }}
+#vappIpallocationpolicy: {{ $nodepool.vappIpallocationpolicy }}
+#vappIpprotocol: {{ $nodepool.vappIpprotocol }}
+#vappProperty: {{ $nodepool.vappProperty }}
+#vappTransport: {{ $nodepool.vappTransport }}
+vcenter: {{ .Values.nodepool.vcenter }}
+vcenterPort: {{ .Values.nodepool.vcenterPort }}
