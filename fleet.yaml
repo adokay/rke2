@@ -9,5 +9,5 @@ targetCustomizations:
       matchLabels:
         management.cattle.io/cluster-display-name: rke2
     correctDrift:
-      enabled: true
-      force: true
+      enabled: false
+      force: false
