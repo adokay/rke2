@@ -7,7 +7,7 @@ targetCustomizations:
   - name: test-cluster
     clusterSelector:
       matchLabels:
-        management.cattle.io/cluster-display-name: YOUR-CLUSTER-NAME
+        management.cattle.io/cluster-display-name: rke2
     correctDrift:
       enabled: true
       force: false
