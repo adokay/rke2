@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: fleet-drift-test
+  name: fleet-drift-repro2
   labels:
     purpose: drift-test
     managed-by: fleet

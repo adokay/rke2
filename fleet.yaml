@@ -1,4 +1,4 @@
-defaultNamespace: fleet-drift-test
+defaultNamespace: default
 
 kustomize:
   dir: ./base
