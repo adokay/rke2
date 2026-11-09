@@ -1,0 +1,13 @@
+defaultNamespace: fleet-drift-test
+
+kustomize:
+  dir: ./base
+
+targetCustomizations:
+  - name: test-cluster
+    clusterSelector:
+      matchLabels:
+        management.cattle.io/cluster-display-name: YOUR-CLUSTER-NAME
+    correctDrift:
+      enabled: true
+      force: false
