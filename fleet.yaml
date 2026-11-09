@@ -3,6 +3,9 @@ defaultNamespace: fleet-drift-test
 kustomize:
   dir: ./base
 
+helm:
+  takeOwnership: true
+
 targetCustomizations:
   - name: test-cluster
     clusterSelector:
@@ -11,3 +14,4 @@ targetCustomizations:
     correctDrift:
       enabled: false
       force: false
+      keepFailHistory: true
