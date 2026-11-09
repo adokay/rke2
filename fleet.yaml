@@ -7,10 +7,12 @@ helm:
   takeOwnership: true
 
 targetCustomizations:
-  - name: test-cluster
+  - name: rancher-p-blue
     clusterSelector:
       matchLabels:
         management.cattle.io/cluster-display-name: rke2
+    kustomize:
+      dir: fleet-drift-test/base
     correctDrift:
       enabled: false
       force: false
