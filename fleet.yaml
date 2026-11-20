@@ -14,6 +14,6 @@ targetCustomizations:
     kustomize:
       dir: fleet-drift-test/base
     correctDrift:
-      enabled: true
-      force: true
+      enabled: false
+      force: false
       keepFailHistory: true
