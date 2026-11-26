@@ -10,7 +10,7 @@ targetCustomizations:
   - name: rancher-p-blue
     clusterSelector:
       matchLabels:
-        management.cattle.io/cluster-display-name: rke2
+        management.cattle.io/cluster-display-name: custom
     kustomize:
       dir: fleet-drift-test/base
     correctDrift:
