@@ -1,0 +1,10 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: gitops-pipelines-cluster-resources-test
+  namespace: fleet-default
+spec:
+  repo: https://github.com/adokay/rke2.git
+  branch: main
+  paths:
+    - cluster-resources
